@@ -20,7 +20,6 @@
                 <input type="text" id="animeInput" placeholder="e.g. Naruto" required>
                 <button type="submit">Search Anime</button>
             </form>
-            <div id="animeDisplay" class="anime-card"></div>
         </div>
     </main>
     <footer>
@@ -29,6 +28,12 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        document.getElementById('animeForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const animeTitle = document.getElementById('animeInput').value;
+            window.location.href = `display.html?title=${encodeURIComponent(animeTitle)}`;
+        });
+    </script>
 </body>
 </html>

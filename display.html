@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Anime Details</h1>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div id="animeDisplay" class="anime-card">
+                <h2>Loading...</h2>
+                <p>Please wait while we fetch the details.</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Anime Search. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const animeTitle = urlParams.get('title');
+            
+            if (animeTitle) {
+                fetch(`https://api.jikan.moe/v4/anime?q=${encodeURIComponent(animeTitle)}&limit=1`)
+                    .then(response => response.json())
+                    .then(data => {
+                        const anime = data.data[0];
+                        if (anime) {
+                            document.getElementById('animeDisplay').innerHTML = `
+                                <h2>${anime.title}</h2>
+                                <p>${anime.synopsis}</p>
+                                <img src="${anime.images.jpg.image_url}" alt="${anime.title}">
+                            `;
+                        } else {
+                            document.getElementById('animeDisplay').innerHTML = `
+                                <h2>No results found</h2>
+                                <p>Try searching for another anime.</p>
+                            `;
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error fetching anime details:', error);
+                        document.getElementById('animeDisplay').innerHTML = `
+                            <h2>Error</h2>
+                            <p>There was an error fetching the anime details. Please try again later.</p>
+                        `;
+                    });
+            } else {
+                document.getElementById('animeDisplay').innerHTML = `
+                    <h2>Error</h2>
+                    <p>No anime title provided. Please go back and enter an anime title.</p>
+                `;
+            }
+        });
+    </script>
+</body>
+</html>
