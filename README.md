@@ -5,7 +5,7 @@ The project consists of the following files:
 - index.html: Main page where users enter the anime title.
 - display.html: Page that displays the details of the searched anime.
 - styles.css: Stylesheet for the application.
--README.md: Project documentation (this file).
+- README.md: Project documentation (this file).
 
 This is how to use it:
 
