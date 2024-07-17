@@ -13,7 +13,7 @@ This is how to use it:
 - The application redirects to display.html and displays the details of the searched anime.
 
 
-MEMBERS:
+**MEMBERS:**
 - Reyven D. Apolonia
 - Aldrin S. Firme
 - Ruel Sumalinog Jr.
