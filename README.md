@@ -11,3 +11,9 @@ This is how to use it:
 
 - Enter the title of an anime in the input field and click "Search Anime".
 - The application redirects to display.html and displays the details of the searched anime.
+
+
+MEMBERS:
+Reyven D. Apolonia
+Aldrin S. Firme
+Ruel Sumalinog Jr.
