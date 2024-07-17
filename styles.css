@@ -44,6 +44,13 @@ main {
     margin-top: 0;
 }
 
+.anime-card img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px 0;
+}
+
 form {
     display: flex;
     flex-direction: column;
