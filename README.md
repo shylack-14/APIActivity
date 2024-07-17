@@ -14,6 +14,6 @@ This is how to use it:
 
 
 MEMBERS:
-Reyven D. Apolonia
-Aldrin S. Firme
-Ruel Sumalinog Jr.
+- Reyven D. Apolonia
+- Aldrin S. Firme
+- Ruel Sumalinog Jr.
